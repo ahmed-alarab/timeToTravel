@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body{
+            background-image: url("loginn.jpg");
+            background-size: cover;
+        }
+        .title{
+            font-weight: 600px;
+            font-size: 300px;
+            color: black;
+            position: absolute;
+            bottom: 250px;
+            left: 26%;
+            background: linear-gradient(
+                80deg,#516bff,#0a0063,#be5bff,#370050,#7e91ff,#23007a,#63d0ff,#003a3d,#6b81ff,#516bff,#0a0063,#be5bff,#370050,#7e91ff,#23007a,#63d0ff,#003a3d,#6b81ff
+            );
+            -webkit-background-clip:text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s;
+            easy-in-out:infinite;
+        }
+        @keyframes gradient{
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+        }
+        .form{
+            border: fffff 1px solid;
+            width: 700px;
+            height: 900px;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: absolute;
+            left: 28%;
+            bottom: 5%;
+        }
+        input{
+            width: 500px;
+            margin-top: 30px;
+            margin-left: 85px;
+            border-radius: 5px;
+            height: 40px;
+            text-align: center;
+            border: rgb(27, 6, 85);
+            font-size: 30px;
+            color: rgb(27, 6, 85);
+            background-color: rgb(144, 181, 255);
+           
+        }
+        form{
+            margin-top: 300px;
+        }
+        button{
+            width: 500px;
+            margin-top: 30px;
+            margin-left: 85px;
+            border-radius: 5px;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+            color: rgb(27, 6, 85);
+    border: rgb(144, 181, 255);
+    background-color: rgb(144, 181, 255);
+    transition:background-color 0.5s;
+        }
+        button:hover{
+            background-color:rgb(27, 6, 85) ;
+    color: blue;
+        }
+        .closed-eye1{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 510px;
+    bottom: 306px;
+    display: flex;
+}
+.closed-eye2{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 510px;
+    bottom: 234px;
+    display: flex;
+}
+.cond{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    border: ffffff solid 1px;
+    background-color: rgba(0, 0, 0,0.8);
+    width: 250px;
+    height: 160px;
+    color: white;
+    border-radius: 20px;
+    
+}
+.tit-cond{
+    text-align: center;
+}
+.birth{
+    position: absolute;
+    left: 290px;
+    top: 680px;
+    color: rgb(27, 6, 85);
+}
+    </style>
+</head>
+<body>
+    
+    <div class="form">
+        <p class="title">T3</p>
+        <form action="">
+    
+    <input type="text" class="first-name" placeholder="First name" id="fn"><br>
+   
+    <input type="text" class="last-name" placeholder="Last name" id="ln"><br>
+   
+    <input type="email" class="email" placeholder="Email" id="email"><br>
+   
+    <input type="password" class="password" placeholder="Password" id="password" onkeyup="return validate()"><img onclick="functione1()" src="closed-eye.png" class="closed-eye1" id="closed-eye1"><br>
+   
+    <input type="password" class="c-password" placeholder="Confirm password" id="c-password"><img onclick="functione2()" src="closed-eye.png" class="closed-eye2" id="closed-eye2"><br>
+    <label for="" class="birth">date of birth</label><br>
+    <input type="date" placeholder="date of birth"><br>
+<button onclick="confirmm()" id="confirm">CONFIRM</button>
+
+</form>
+</div>
+<div class="cond"><div class="tit-cond">some conditions for the password:</div><br><ul><li id="uppercase">uppercase</li><li id="lowercase">lowercase</li><li id="digit">digit</li><li id="special-character">special-character</li><li id="length">min-8-character</li></ul></div>
+<script>
+let cnd1=false;
+let cnd2=false;
+let cnd3=false;
+let cnd4=false;
+let cnd5=false;
+    let closed1=document.getElementById("closed-eye1");
+    let password1=document.getElementById("password");
+    function functione1(){
+        if(password1.type=="password"){
+            password1.type="text";
+            closed1.src="opened-eye.png"
+        }else{
+        password1.type="password";
+        closed1.src="closed-eye.png"
+    }
+    }
+    let closed2=document.getElementById("closed-eye2");
+    let password2=document.getElementById("c-password");
+    function functione2(){
+        if(password2.type=="password"){
+            password2.type="text";
+            closed2.src="opened-eye.png"
+        }else{
+        password2.type="password";
+        closed2.src="closed-eye.png"
+    }
+    }
+    function validate(){
+var pass=document.getElementById('password');
+var upc=document.getElementById('uppercase');
+var lwc=document.getElementById('lowercase');
+var spc=document.getElementById('special-character');
+var length=document.getElementById('length');
+var dgt=document.getElementById('digit');
+
+
+
+
+if(pass.value.match(/[0-9]/)){
+    dgt.style.color='green';
+    cnd1=true;
+}
+else
+{
+    dgt.style.color='red';
+}
+
+if(pass.value.match(/[a-z]/)){
+    lwc.style.color='green';
+    cnd2=true;
+}
+else
+{
+    lwc.style.color='red';
+}
+
+if(pass.value.match(/[A-Z]/)){
+    upc.style.color='green';
+    cnd3=true;
+}
+else
+{
+    upc.style.color='red';
+}
+
+if(pass.value.match(/[!\?\@\#\>\<\%\&\+\-\*\/\(\)\{\}\$\-\_\,\.\;\:\£\[\]\=]/)){
+    spc.style.color='green';
+    cnd4=true;
+}
+else
+{
+    spc.style.color='red';
+}
+if(pass.value.length>=8){
+    length.style.color='green';
+    cnd5=true;
+}
+else
+{
+    length.style.color='red';
+}
+    }
+    function confirmm(){
+        var fn=document.getElementById('fn').value;
+        var ln=document.getElementById('ln').value;
+        var email=document.getElementById('email').value;
+        var conf=document.getElementById('confirm');
+        var pass=document.getElementById('password').value;
+        var cpass=document.getElementById('c-password').value;
+if(pass==cpass && cnd1==true&&cnd2==true&&cnd3==true&&cnd4==true&&cnd5==true&&fn!=''&&ln!=''&&email!=''){
+
+    window.location.href='login.html';
+
+}
+else
+{
+    alert("something wrong");
+}
+    }
+    
+</script>
+</body>
+</html>

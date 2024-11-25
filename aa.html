@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="forgotPasswordBtn">Forgot Password</button>
+
+    <!-- The modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Change Password</h3>
+        <form id="passwordChangeForm">
+          <label for="newPassword">New Password:</label><br>
+          <input type="password" id="newPassword" name="newPassword" required><br><br>
+          <input type="submit" value="Change Password">
+        </form>
+      </div>
+    </div>
+    <script>
+        document.getElementById('forgotPasswordBtn').addEventListener('click', function() {
+      // Show the modal when the button is clicked
+      document.getElementById('myModal').style.display = 'block';
+    });
+
+    // Close the modal when the 'X' button is clicked
+    document.getElementsByClassName('close')[0].addEventListener('click', function() {
+      document.getElementById('myModal').style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      var modal = document.getElementById('myModal');
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    // Password change form submission
+    document.getElementById('passwordChangeForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Retrieve the new password
+      var newPassword = document.getElementById('newPassword').value;
+
+      // Add your password change logic here (e.g., API call, validation)
+      // Once the password is changed successfully, you can close the modal or perform any other action
+
+      // For this example, let's simply close the modal
+      document.getElementById('myModal').style.display = 'none';
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <style>
+    .all{
+        margin-top: 250px;
+        margin-left: 650px;
+        
+    }
+input,select,textarea{
+    width: 40%;
+    height: 30px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+button{
+    background-color: blue;
+    color: white;
+    width: 40%;
+    border-radius: 30px;
+    height: 30px;
+    font-size: 20px;
+}
+.nbB{
+    margin-left: 30%;
+    font-size: 50px;
+}
+
+   </style>
+</head>
+<body>
+    
+    <div class="all">
+        <h1>blog</h1>
+        <input type="text" placeholder="title" id="title"><br>
+        <textarea type="text" placeholder="content" id="content"></textarea><br>
+        <select class="slct" id="desc">
+            <option value="technology">technology</option>
+            <option value="travel">travel</option>
+            <option value="education">education</option>
+            
+        </select><br>
+        <input type="text" placeholder="image link" id="link"><br>
+        <input type="text" placeholder="author" id="author"><br>
+        <button onclick="addBlog()">submit post</button>
+        <label for="" id="redm"></label>
+        <button onclick="reverse()">reverse</button>
+    </div>
+    <div class="blog" id="blog">
+        <div class="nbB" id="nbB"></div>
+        <div id="blogNumber"></div>
+        <a href=""></a><br> 
+        
+        <div class="desc" id="desc1"></div><br>
+        <div class="title" id="title1"></div><br>
+        <div class="content" id="content"></div><br>
+        <div class="author" id="author1"></div>
+
+    </div>
+    <script>
+    function addBlog(){
+       let blogN=0;
+const title=document.getElementById("title").value;
+const content=document.getElementById("content").value;
+const desc=document.getElementById("desc").value;
+const author=document.getElementById("author").value;
+const link=document.getElementById("link").value;
+const redm=document.getElementById("redm");
+const blogNumber=document.getElementById("blogNumber");
+if(title===''||content===''||author===''||link===''){
+    redm.textContent='fill all information';
+                                     redm.style.color = 'red'; 
+}
+else
+{
+    blogNumber.textContent="number of blogs: "+ ++blogN;
+let blog={title:title,content:content,desc:desc,author:author,link:link}
+
+const blogTiDiv=document.getElementById("div");
+blogTiDiv.classList.add("title");
+blogTiDiv.appendChild(blogTiDiv);
+
+
+const blogDescDiv=document.getElementById("div");
+blogDescDiv.classList.add("description");
+blogDescDiv.appendChild(blogDescDiv);
+
+
+
+const blogContDiv=document.getElementById("div");
+blogContDiv.classList.add("content");
+blogContDiv.appendChild(blogContDiv);
+
+
+const blogLinkDiv=document.getElementById("div");
+blogTiDiv.classList.add("link");
+blogTiDiv.appendChild(blogTiDiv);
+
+
+const blogAuthDiv=document.getElementById("div");
+blogAuthDiv.classList.add("author");
+blogAuthDiv.appendChild(blogAthDiv);
+
+blog.style.display="block";
+container.appendChild(blog);
+const timeOUT=setTimeout(addBlog,3000);
+  
+
+}
+}
+function reverse(){
+    blog.reverse();
+    const cont=document.getElementById("blogC");
+    while(cont.firstChild){
+    cont.removeChild(cont.firstChild);
+    }
+    function findArrayByTitle(blog, title) {
+    return blog.find(array => blog.title === title);
+}
+
+
+}
+    </script>
+</body>
+</html>

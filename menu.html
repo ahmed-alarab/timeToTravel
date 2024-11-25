@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+body{
+    background-image: url("air-port.jpg");
+    background-size: cover;
+}
+.border{
+    border: solid rgba(15, 15, 68,0.8) 1px;
+    width: 95%;
+    position: absolute;
+    left: 2.5%;
+    height: 1800px;
+    top: 30px;
+    background-color:  rgba(15, 15, 68,0.8);
+}
+.title{
+            font-size: 300px;
+            position: absolute;
+            bottom: 1200px;
+            left: 38%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            letter-spacing: 10px;
+            background: linear-gradient(
+                80deg,#516bff,#0a0063,#5437,#ffb055,#7e91ff,#23007a,#63d0ff,#003a3d,#6b81ff,#516bff,#0a0063,#5437,#ffb54757,#7e91ff,#23007a,#63d0ff,#003a3d,#6b81ff
+            );
+            -webkit-background-clip:text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s;
+            easy-in-out:infinite
+        }
+        @keyframes gradient{
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0% 50%;
+            }
+}
+.form1{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+
+}
+.form2{
+    position: absolute;
+    top: 170px;
+    left: 600px;
+    color: white;
+}
+.ticket{
+    font-size: 100px;
+}
+.input1{
+width: 20px;
+height: 20px;
+margin-top: 15px;
+}
+.input2{
+width: 20px;
+height: 20px;
+margin-top: 15px;
+}
+h1{
+    color: white;
+    font-size: 50px;
+}
+.label1{
+    font-size: 20px;
+    color: #63d0ff;
+}
+.label2{
+    font-size: 20px;
+    color: #63d0ff;
+    
+}
+.slct{
+    background-color: #63d0ff;
+    color:#23007a;
+    width: 150px;
+    height: 40px;
+    border: #63d0ff;
+    font-size: 25px;
+}
+.nbStars{
+font-size: 60px;
+}
+.more{
+    position: absolute;
+    top: 0px;
+    left: 700px;
+    font-size: 100px;
+
+}
+.text-area{
+    width: 400px;
+    height: 150px;
+    font-size: 30px;
+}
+.text-area::placeholder{
+    font-size: 30px;
+}
+.amount{
+    width: 400px;
+    height: 100px;
+    border: solid 1px white;
+    width: 600px;
+    height: 200px;
+    
+}
+.total-amnt{
+    width: 400px;
+    height: 80px;
+    background-color:blue ;
+    color: rgb(14, 14, 49);
+    transition: 0.8s;
+    border-color: transparent;
+    border-radius: 20px;
+    font-size: 50px;    
+}
+.total-amnt:hover{
+    background-color: rgb(14, 14, 49);
+    color:blue ;
+    
+}
+table{
+    width: 95%;
+    position: absolute;
+    left: 2.5%;
+    top: 1300px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+}
+tr,td,th{
+  
+  border: 1px solid black;
+text-align: center;
+}
+.delete{
+    width: 400px;
+    height: 50px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="border">
+        <p class="title">T3</p>
+        <form action="" class="form1">
+        <h1 class="ticket">ticket</h1>
+        <h1>country:</h1>
+        <select class="slct" id="slct">
+            <option value="italie" aria-checked="true" id="italie">italie(600$)</option>
+            <option value="france" id="france">france(500$)</option>
+            <option value="japan" id="japan">japan(450$)</option>
+            <option value="germany" id="germany">germany(500$)</option>
+            <option value="china" id="china">china(400$)</option>
+            <option value="qatar" id="qatar">qatar(600$)</option>
+            <option value="kuait" id="kuait">kuait(550$)</option>
+        </select>
+        <h1>class:</h1>
+<input type="radio" class="input1" name="class" id="ec" checked><label class="label1" >economy +50$</label><br>
+<input type="radio" class="input1" name="class" id="pr-ec"><label class="label1" >premium economy +100$</label><br>
+<input type="radio" class="input1" name="class"  id="bui"><label class="label1">business +150$</label><br>
+<input type="radio" class="input1" name="class"  id="fir"><label class="label1">First class +200$</label><br>
+<h1>suitcase:</h1>
+<input type="checkbox" class="checkbox" id="suit"><label class="label1">extra suitCase +50$</label><br>
+<h1>travel type:</h1>
+<input type="radio" name="stop" checked><label class="label1">stopover</label><br>
+<input type="radio" name="stop" id="dir"><label class="label1">direct +50$</label><br>
+</form>
+<form action="" class="form2">
+    <p class="ticket">hotel services</p>
+    <div class="nbStars">number of stars:</div>
+    <input type="radio" class="input2" name="class" id="star1"><label class="label2">1 star +20$</label><br>
+    <input type="radio" class="input2" name="class" id="star2"><label class="label2">2 star +30$</label><br>
+<input type="radio" class="input2" name="class" id="star3" checked><label class="label2" >3 star +50$</label><br>
+<input type="radio" class="input2" name="class" id="star4" ><label class="label2">4 star +80$</label><br>
+<input type="radio" class="input2" name="class" id="star5" ><label class="label2">5 star +120$</label><br>
+<h1>other services:</h1>
+<input type="checkbox" class="checkbox" id="serv1"><label class="label1">breakfast +20$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv2"><label class="label1">parking +10$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv3"><label class="label1">room with private view +30$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv4"><label class="label1">spa / hammam / massage +30$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv5"><label class="label1">Beauty kit: hair dryer, shaving kit, etc +30$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv6"><label class="label1">Baby / child kit (bed, high chair, etc) +25$</label><br><br>
+<input type="checkbox" class="checkbox" id="serv7"><label class="label1">Shuttle / Shuttle / Private bus +10$</label><br>
+
+<div class="more">
+<p>more_info</p>
+<textarea name="" id="text-area" cols="30" rows="10" class="text-area" placeholder="more information about your travel?"></textarea>
+<br><br>
+
+<label for="" id="total">total:</label>
+<label type="text" id="amount" class="amount"></label>
+<button id="calc" onclick="calculate()" class="total-amnt" type="button">total-amount</button>
+</div>
+</form>
+    </div>
+    <table style="width:100%" id="table">
+        <tr>
+          <th>Name</th>
+          <th>total amount</th>
+         <th>info</th>
+
+        </tr>
+      
+      
+      <tbody id="heretoappend">
+      
+      </tbody>
+          <script>
+function calculate(){
+    var totalAmount=0;
+    var slct=document.getElementById("slct");
+    var input=document.getElementById("amount");
+    var ec=document.getElementById("ec");
+    var prem=document.getElementById("pr-ec");
+    var bui=document.getElementById("bui");
+    var fir=document.getElementById("fir");
+    var suit=document.getElementById("suit");
+    var dir=document.getElementById("dir");
+    var star1=document.getElementById("star1");
+    var star2=document.getElementById("star2");
+    var star3=document.getElementById("star3");
+    var star4=document.getElementById("star4");
+    var star5=document.getElementById("star5");
+    var serv1=document.getElementById("serv1");
+    var serv2=document.getElementById("serv2");
+    var serv3=document.getElementById("serv3");
+    var serv4=document.getElementById("serv4");
+    var serv5=document.getElementById("serv5");
+    var serv6=document.getElementById("serv6");
+    var serv7=document.getElementById("serv7");
+    var textA=document.getElementById("text-area").value;
+    var table=document.getElementById("table");
+
+
+if(slct.value=="italie"){
+totalAmount=totalAmount+600;   
+}
+else
+
+    if(slct.value=="france"){
+totalAmount=totalAmount+500;   
+    }
+else
+
+    if(slct.value=="germany"){
+totalAmount=totalAmount+500;   
+}
+else
+
+    if(slct.value=="china"){
+totalAmount=totalAmount+400;   
+}
+else
+
+    if(slct.value=="japan"){
+totalAmount=totalAmount+450;   
+
+}
+else
+if(slct.value=="qatar"){
+totalAmount=totalAmount+600;   
+}
+else
+if(slct.value=="kuait"){
+totalAmount=totalAmount+550;   
+}
+if(ec.checked==true){
+    totalAmount=totalAmount+50;   
+
+}
+else
+if(prem.checked==true){
+    totalAmount=totalAmount+100;   
+
+}
+else
+if(bui.checked==true){
+    totalAmount=totalAmount+150;   
+
+}
+else
+if(fir.checked==true){
+    totalAmount=totalAmount+200;   
+
+}
+if(suit.checked==true){
+    totalAmount=totalAmount+50;   
+
+}
+if(dir.checked==true){
+    totalAmount=totalAmount+50;   
+
+}
+if(star1.checked==true){
+    totalAmount=totalAmount+20;   
+
+}
+if(star2.checked==true){
+    totalAmount=totalAmount+30;   
+
+}
+if(star3.checked==true){
+    totalAmount=totalAmount+50;   
+
+}
+if(star4.checked==true){
+    totalAmount=totalAmount+80;   
+
+}
+if(star5.checked==true){
+    totalAmount=totalAmount+120;   
+
+}
+if(serv1.checked==true){
+    totalAmount=totalAmount+20;   
+
+}
+if(serv2.checked==true){
+    totalAmount=totalAmount+10;   
+
+}
+if(serv3.checked==true){
+    totalAmount=totalAmount+30;   
+
+}
+if(serv4.checked==true){
+    totalAmount=totalAmount+30;   
+
+}
+if(serv5.checked==true){
+    totalAmount=totalAmount+30;   
+
+}
+if(serv6.checked==true){
+    totalAmount=totalAmount+25;   
+
+}
+if(serv7.checked==true){
+    totalAmount=totalAmount+10;   
+
+}
+input.innerHTML=totalAmount + "$";
+
+    let tr = document.createElement("tr");
+let html="<td> "  + slct.value +" </td> <td> "  + totalAmount+"$" +"</td> <td> "  + textA + "</td>" ;
+tr.innerHTML= html;
+heretoappend.appendChild(tr);
+}
+    </script>
+</body>
+</html>

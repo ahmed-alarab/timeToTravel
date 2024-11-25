@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+.photo{
+    background-image: url("ua.png");
+    width: 50%;
+    height: 1000px;
+    position: absolute;
+    left: 0px;
+    background-size: cover;
+}
+.border{
+    border: solid 1px black;
+    width: 50%;
+    height: 1000px;
+    position: absolute;
+    left: 50%;
+}
+.input1{
+    width: 70%;
+    height: 20px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+.form{
+    position: absolute;
+    bottom: 500px;
+    left: 50px;
+    
+}
+button{
+    width: 70%;
+    height: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 30px;
+}
+    </style>
+</head>
+<body>
+    <div class="photo"></div>
+    <div class="border">
+        <div action="" class="form">
+        <h1>login</h1>
+        <div>please enter your email and password</div><br>
+        <input type="email" placeholder="email address" class="input1" id="input1">
+        <input type="password" placeholder="password" class="input1" id="input2"><br>
+        <input type="checkbox" class="checkB">
+        <label for="">remember password</label><br>
+        <button onclick="signIn()">sign in</button><br>
+        <label for="" id="label"></label>
+        </div>
+    </div>
+<script>
+    const email='admin@ua.edu.lb';
+    const password='ua@2023';
+    function signIn(){
+        let emailA = document.getElementById("input1").value;
+        let passwordd = document.getElementById("input2").value;
+        let label=document.getElementById("label");
+        if (emailA === '' && passwordd === '') {
+                                     label.textContent='email and password are required';
+                                     label.style.color = 'red'; 
+                                     emailA.style.border='red';
+                                     } 
+                                     else
+                                     if(emailA === ''){
+                                        label.textContent='email is required';
+                                     label.style.color = 'red'; 
+                                     emailA.style.border='red';
+                                     }
+                                     else
+                                     if(passwordd === ''){
+                                        label.textContent='password is required';
+                                     label.style.color = 'red'; 
+                                     emailA.style.border='red';
+                                     }
+                                     else
+                                     if (emailA.tolowercase() !== email || passwordd.tolowercase() !== password) {
+                                        label.textContent='incorrect email or password';
+                                     label.style.color = 'red'; 
+                             } 
+                             else
+                             if (emailA === email && passwordd === password) {
+                                emailA.textContent='';
+                                passwordd.textContent='';
+                                        label.textContent='success';
+                                     label.style.color = 'green'; 
+                                     
+    }
+                             
+}
+</script>
+</body>
+</html>
